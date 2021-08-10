@@ -1,9 +1,9 @@
+/* eslint-disable no-console */
 const express = require('express');
+
 const app = express();
-const port = process.env.PORT || 8000;
+const PORT = process.env.PORT || 8000;
 
-
-
-app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`);
-})
+app.listen(PORT, () => {
+    console.log(`Example app listening at http://localhost:${PORT}`);
+});
