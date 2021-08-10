@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const express = require('express');
 
 const app = express();
@@ -11,6 +12,14 @@ app.get('/', (request, response) => {
 
 app.use(express.static(pathFile.join(__dirname, '../', 'public')));
 
+=======
+/* eslint-disable no-console */
+const express = require('express');
+
+const app = express();
+const PORT = process.env.PORT || 8000;
+
+>>>>>>> e492b90ba28305b5a4107b5471f09dae5623d53c
 app.listen(PORT, () => {
     console.log(`Example app listening at http://localhost:${PORT}`);
 });
