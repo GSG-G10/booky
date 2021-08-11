@@ -11,6 +11,8 @@ const createElement = (parent, className, tag) => {
   return ele;
 };
 const showBookRecommend = (data, parentOf, index) => {
+  const heading = createElement(searchSection, 'results-title', 'h2')
+  heading.textContent = 'Recomended'
   const dataArr = data.items;
   for (let i = 0; i < index; i += 1) {
     const dataKeys = Object.keys(dataArr[i]);
@@ -53,7 +55,7 @@ const showResult = () => {
   searchSection.textContent = '';
   const inputText = inputField.value;
   const query = inputText.split(' ').join('-');
-
+  createElement(searchSection, 'results-title', 'h2').textContent = 'Results'
   requestApi(`/search?q=${query}`, searchSection, 5);
   inputField.value = '';
 };
