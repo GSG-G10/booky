@@ -1,11 +1,12 @@
 const express = require('express');
 const pathFile = require('path');
-const { searchFetch, recommendeBooks } = require('./handler');
+const route = require('./router');
 
 const app = express();
 
 const PORT = process.env.PORT || 8000;
 
+<<<<<<< HEAD
 app.get('/', (request, response) => {
     response.sendFile(pathFile.join(__dirname, '../', 'public', 'index.html'));
 });
@@ -18,6 +19,9 @@ app.get('/recommend', (request, response) => {
     recommendeBooks(response);
 });
 
+=======
+app.use(route);
+>>>>>>> e6d2803a242291470ba6df673cd325a1f365cd6e
 app.use(express.static(pathFile.join(__dirname, '../', 'public')));
 
 app.listen(PORT, () => {

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const recommendedBooksCont = document.querySelector('.recommended-books');
 
 const createElement = (parent, className, tag) => {
@@ -23,6 +24,17 @@ const showBookRecommend = (data, parentOf) => {
         createElement(divParent, 'description', 'div').innerHTML = description;
 
     }
+=======
+// eslint-disable-next-line no-unused-vars
+const createElement = (parent, className, tag) => {
+  const ele = document.createElement(tag);
+  parent.appendChild(ele);
+  ele.classList.add(className);
+};
+
+const showBookRecommend = () => {
+    console.log('show');
+>>>>>>> e6d2803a242291470ba6df673cd325a1f365cd6e
 };
 const requestApi = () => {
     fetch('/recommend').then((response) => response.json())
@@ -30,5 +42,13 @@ const requestApi = () => {
 };
 
 window.onload = (e) => {
+<<<<<<< HEAD
     requestApi();
 };
+=======
+  requestApi();
+};
+document.querySelector('#button').addEventListener('click', () => {
+  fetch('/search').then((res) => res.json()).then(console.log);
+})
+>>>>>>> e6d2803a242291470ba6df673cd325a1f365cd6e
