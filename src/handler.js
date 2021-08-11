@@ -11,13 +11,14 @@ const searchFetch = (res, book) => {
 };
 
 const recommendeBooks = (response) => {
-    fetch('https://www.googleapis.com/books/v1/volumes?q=computer')
-        .then((result) => result.json()).then((data) => {
-            response.send(data);
-        })
-        .catch((error) => {
-            console.log(error);
-        });
+  fetch('https://www.googleapis.com/books/v1/volumes?q=computer')
+    .then((result) => result.json()).then((data) => {
+      response.send(data);
+    })
+    .catch((error) => {
+      response.writeHead(404);
+      response.send(error);
+    });
 };
 
 module.exports = { recommendeBooks, searchFetch };
