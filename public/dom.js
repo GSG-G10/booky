@@ -4,12 +4,6 @@ const searchBtn = document.querySelector('#button');
 const searchSection = document.querySelector('.search-result-section');
 const errMsg = document.querySelector('.err-msg');
 
-const createElement = (parent, className, tag) => {
-  const ele = document.createElement(tag);
-  parent.appendChild(ele);
-  ele.classList.add(className);
-  return ele;
-};
 const showBookRecommend = (data, parentOf, index) => {
   const dataArr = data.items;
   for (let i = 0; i < index; i += 1) {
@@ -26,11 +20,6 @@ const showBookRecommend = (data, parentOf, index) => {
       createElement(divParent, 'description', 'div').textContent = description;
     }
   }
-};
-const requestApi = (url, parent, index) => {
-  fetch(url).then((response) => response.json())
-    .then((data) => showBookRecommend(data, parent, index))
-    .catch((err) => console.log(err));
 };
 
 requestApi('/recommend', recommendedBooksCont, 12);
