@@ -3,23 +3,28 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        font-family: 'Redressed', 'cursive';
     }
     
     body {
-        background-image: url('./images/background.jpg')
+        min-height: 100px;
+        font-size: 16px;
     }
     
-    .header-nav {
-        height: 10vh;
+    header {
+        height: 60px;
         display: flex;
         justify-content: space-around;
         align-items: center;
     }
     
+    header h1 {
+        margin-right: 200px;
+    }
+    
     .logo {
         color: #000000;
         font-size: 2.2rem;
-        font-family: 'Redressed', 'cursive';
     }
     
     .logo:hover {
@@ -27,7 +32,6 @@
     }
     
     .nav-list {
-        max-width: 45%;
         display: flex;
         justify-content: space-evenly;
         list-style: none;
@@ -39,10 +43,55 @@
     }
     
     .nav-list li {
-        font-size: 1rem;
+        font-size: 1.3rem;
         padding: 1rem 0.7rem;
         border-right: none;
         font-weight: bold;
+    }
+    
+    .heading-container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        min-height: 400px;
+        background-image: url('./images/29.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    
+    .heading-container h2,
+    p {
+        font-size: 2.5rem;
+        color: white;
+    }
+    
+    .heading-container p {
+        width: 50%;
+        text-align: center;
+    }
+    
+    .form input {
+        width: 500px;
+        height: 45px;
+        border-radius: 10px;
+        padding: 10px;
+        border: none;
+    }
+    
+    .form input:focus {
+        outline: 0;
+    }
+    
+    .form #button {
+        width: 50px;
+        height: 45px;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: white;
+        border: none;
     }
     
     .card {
