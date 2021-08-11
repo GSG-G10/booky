@@ -6,7 +6,6 @@ const createElement = (parent, className, tag) => {
   ele.classList.add(className);
   return ele;
 };
-
 const showBookRecommend = (data, parentOf) => {
   const dataArr = data.items;
   for (let i = 0; i < 12; i += 1) {
@@ -30,9 +29,7 @@ const requestApi = () => {
     .catch((err) => console.log(err.message));
 };
 
-window.onload = (e) => {
-  requestApi();
-};
+requestApi();
 document.querySelector('#button').addEventListener('click', () => {
   fetch('/search').then((res) => res.json()).then(console.log);
 });
