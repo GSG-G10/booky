@@ -16,7 +16,9 @@ const recommendeBooks = (response) => {
       response.send(data);
     })
     .catch((error) => {
-      console.log(error);
+      res.writeHead(404)
+      res.send(error);
+      
     });
 };
 
