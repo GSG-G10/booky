@@ -1,4 +1,8 @@
 const recommendedBooksCont = document.querySelector('.recommended-books');
+const inputField = document.querySelector('#search-input');
+const searchBtn = document.querySelector('#button');
+const searchSection = document.querySelector('.search-result-section');
+const errMsg = document.querySelector('.err-msg');
 
 const createElement = (parent, className, tag) => {
   const ele = document.createElement(tag);
@@ -6,9 +10,9 @@ const createElement = (parent, className, tag) => {
   ele.classList.add(className);
   return ele;
 };
-const showBookRecommend = (data, parentOf) => {
+const showBookRecommend = (data, parentOf, index) => {
   const dataArr = data.items;
-  for (let i = 0; i < 12; i += 1) {
+  for (let i = 0; i < index; i += 1) {
     const dataKeys = Object.keys(dataArr[i]);
     if (dataKeys.indexOf('volumeInfo') > 0) {
       const divParent = createElement(parentOf, 'card-cont', 'div');
@@ -23,13 +27,34 @@ const showBookRecommend = (data, parentOf) => {
     }
   }
 };
-const requestApi = () => {
-  fetch('/recommend').then((response) => response.json())
-    .then((data) => showBookRecommend(data, recommendedBooksCont))
-    .catch((err) => console.log(err.message));
+const requestApi = (url, parent, index) => {
+  fetch(url).then((response) => response.json())
+    .then((data) => showBookRecommend(data, parent, index))
+    .catch((err) => console.log(err));
 };
 
-requestApi();
-document.querySelector('#button').addEventListener('click', () => {
-  fetch('/search').then((res) => res.json()).then(console.log);
+requestApi('/recommend', recommendedBooksCont, 12);
+
+// Search section
+
+inputField.addEventListener('keyup', (e) => {
+  if (e.keyCode === 13) {
+    e.preventDefault();
+    searchBtn.click();
+  }
 });
+// client side input handler
+const showResult = () => {
+  if (!inputField.value) {
+    errMsg.textContent = '*enter your book to search';
+    return;
+  }
+  errMsg.textContent = '';
+  searchSection.textContent = '';
+  const inputText = inputField.value;
+  const query = inputText.split(' ').join('-');
+
+  requestApi(`/search?q=${query}`, searchSection, 5);
+  inputField.value = '';
+};
+searchBtn.addEventListener('click', showResult);
