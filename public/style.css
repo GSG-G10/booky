@@ -9,6 +9,7 @@
     body {
         min-height: 100px;
         font-size: 16px;
+        background-color: beige;
     }
     
     header {
@@ -94,8 +95,33 @@
         border: none;
     }
     
-    .card {
-        width: 100px;
+    .card {}
+    
+    .recommended-books,
+    .search-result-section {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        width: 85%;
+        margin: 20px auto;
+    }
+    
+    .card-cont {
+        width: 240px;
+        background-color: white;
+        height: 320px;
+        overflow: auto;
+        margin-bottom: 20px;
+        box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    }
+    
+    .card-cont .img {
+        width: 240px;
         height: 200px;
-        background-repeat: no-repeat;
+    }
+    
+    .card-cont .title {
+        text-align: center;
     }
