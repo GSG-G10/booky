@@ -1,6 +1,6 @@
 const express = require('express');
 const pathFile = require('path');
-const searchFetch = require('./handler');
+const { searchFetch, recommendeBooks } = require('./handler');
 
 const app = express();
 
@@ -11,7 +11,7 @@ app.get('/', (request, response) => {
 });
 app.get('/search', (req, res) => {
   const param = req.query.q;
-  res.send(searchFetch(param));
+  searchFetch(res,param);
 });
 app.get('/recommend', (request, response) => {
   // eslint-disable-next-line no-undef
