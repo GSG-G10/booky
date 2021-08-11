@@ -1,3 +1,10 @@
+const createElement = (parent,class,tag) => {
+    const ele = document.createElement(tag)
+    parent.appendChild(ele);
+    ele.classList.add(class)
+
+}
+
 const showBookRecommend = (response) => {
     console.log('show');
 };

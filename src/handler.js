@@ -1,13 +1,14 @@
 const fetch = require('node-fetch');
 
-const searchFetch = (book) => {
+const searchFetch = (res,book) => {
   const url = `https://www.googleapis.com/books/v1/volumes?q=search+${book}`;
   fetch(url)
     .then((response) => response.json())
-    .then((data) => data.items[0].volumeInfo)
+    .then((data) => {
+        res.send(data)
+    })
     .catch((err) => err.message);
 };
-module.exports = searchFetch;
 
 const recommendeBooks = (response) => {
   fetch('https://www.googleapis.com/books/v1/volumes?q=bookshelves')
@@ -19,4 +20,4 @@ const recommendeBooks = (response) => {
     });
 };
 
-module.exports = { recommendeBooks,searchFetch };
+module.exports = {recommendeBooks,searchFetch };
