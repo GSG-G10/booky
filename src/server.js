@@ -10,7 +10,8 @@ app.get('/', (request, response) => {
     response.sendFile(pathFile.join(__dirname, '../', 'public', 'index.html'));
 });
 app.get('/recommend', (request, response) => {
-    response.end(recommendeBooks());
+
+    recommendeBooks(response);
 });
 
 app.use(express.static(pathFile.join(__dirname, '../', 'public')));
