@@ -13,6 +13,11 @@ app.get('/search', (req, res) => {
   const param = req.query.q;
   res.send(searchFetch(param));
 });
+app.get('/recommend', (request, response) => {
+  // eslint-disable-next-line no-undef
+  recommendeBooks(response);
+});
+
 app.use(express.static(pathFile.join(__dirname, '../', 'public')));
 
 app.listen(PORT, () => {
