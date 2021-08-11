@@ -1,10 +1,10 @@
 const showBookRecommend = (response) => {
-    console.log("show");
+    console.log('show');
 };
 const requestApi = () => {
-    fetch('/recommend').then((response) => showBookRecommend(response));
+  fetch('/recommend').then((response) => showBookRecommend(response));
 };
 
 window.onload = (e) => {
-    requestApi();
-}
+  requestApi();
+};
