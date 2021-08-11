@@ -5,7 +5,7 @@ const searchFetch = (res,book) => {
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
-        res.send(data)
+      res.send(data);
     })
     .catch((err) => err.message);
 };
