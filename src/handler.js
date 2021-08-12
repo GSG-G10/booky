@@ -11,7 +11,7 @@ const searchFetch = (res, book) => {
 };
 
 const recommendeBooks = (response) => {
-  fetch('https://www.googleapis.com/books/v1/volumes?q=computer')
+  fetch('https://www.googleapis.com/books/v1/volumes?q=literature+history+sport+computer+science')
     .then((result) => result.json()).then((data) => {
       response.send(data);
     })
