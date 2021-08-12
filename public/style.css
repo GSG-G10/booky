@@ -95,7 +95,6 @@ p {
     border: none;
 }
 
-.card {}
 
 .recommended-books,
 .search-result-section {
@@ -124,4 +123,11 @@ p {
 
 .card-cont .title {
     text-align: center;
+}
+.results-title {
+  width: 80%;
+  text-align: center;
+  border-bottom: 2px solid;
+  margin: 0 auto;
+  padding: 5px;
 }
