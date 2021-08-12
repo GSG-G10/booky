@@ -5,13 +5,15 @@
 * [Ameera Abed]
 
 ## Description
-Our website allows Users to search about books and authers all over the world
+Our website allows Users to search about books and authers all over the world. And the website will provide the user description and details about the book.
 
 ## User Stories
-* The user can search books by name .
-* the user can explore books by click explore recommended books .
-* the user can find details about the movie and see the poster . 
-
+#### As a user I can:
+* search books by name .
+* search about books by category .
+* see the cover of presented books
+* explore books by click explore recommended books .
+* find details about the movie and see the poster . 
 
 ## Tech. used
 * [Git Work Flow]()
